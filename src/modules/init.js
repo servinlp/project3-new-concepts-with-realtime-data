@@ -11,14 +11,23 @@ function init() {
 	loadObject( 'catfishRawModel' )
 		.then( object => {
 
+			object.position.x = 5
 			scene.add( object )
 
 		} )
-		.catch( err => {
+		.catch( err => console.error( err ) )
 
-			console.error( err )
+	loadObject( 'plantebakken' )
+		.then( object => {
+			
+			console.log( object )
+			object.scale.x = 0.01
+			object.scale.y = 0.01
+			object.scale.z = 0.01
+			scene.add( object )
 
 		} )
+		.catch( err => console.error( err ) )
 
 	renderer.animate( render )
 
