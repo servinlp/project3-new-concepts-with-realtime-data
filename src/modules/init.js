@@ -8,7 +8,7 @@ function init() {
 	const axesHelper = new THREE.AxesHelper( 5 )
 	scene.add( axesHelper )
 
-	loadObject( 'main-tank' )
+	loadObject( 'catfishRawModel' )
 		.then( object => {
 
 			scene.add( object )
