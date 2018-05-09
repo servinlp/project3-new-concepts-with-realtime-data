@@ -17,7 +17,7 @@ function init() {
 		} )
 		.catch( err => console.error( err ) )
 
-	loadObject( 'plantebakken' )
+	loadObject( 'plantebakken-met-gras' )
 		.then( object => {
 			
 			console.log( object )
