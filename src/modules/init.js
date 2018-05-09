@@ -5,8 +5,15 @@ import { renderer, scene } from './base.js'
 
 function init() {
 
-	const axesHelper = new THREE.AxesHelper( 5 )
+	const axesHelper = new THREE.AxesHelper( 5 ),
+		backplaneGeometry = new THREE.PlaneGeometry( 40, 40, 40 ),
+		backplaneMaterial = new THREE.MeshBasicMaterial( { color: 0xffffff } ),
+		backplane = new THREE.Mesh( backplaneGeometry, backplaneMaterial )
+
+	backplane.position.z = -5
+
 	scene.add( axesHelper )
+	scene.add( backplane )
 
 	loadObject( 'catfishRawModel' )
 		.then( object => {
@@ -17,7 +24,7 @@ function init() {
 		} )
 		.catch( err => console.error( err ) )
 
-	loadObject( 'plantebakken' )
+	loadObject( 'plantebakken-met-gras' )
 		.then( object => {
 			
 			console.log( object )
