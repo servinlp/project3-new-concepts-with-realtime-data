@@ -10,21 +10,21 @@ function init() {
 		backplaneMaterial = new THREE.MeshBasicMaterial( { color: 0xffffff } ),
 		backplane = new THREE.Mesh( backplaneGeometry, backplaneMaterial )
 
-	backplane.position.z = -5
+	backplane.position.z = 50
 
 	scene.add( axesHelper )
 	scene.add( backplane )
 
-	loadObject( 'catfishRawModel' )
-		.then( object => {
+	// loadObject( 'catfishRawModel' )
+	// 	.then( object => {
 
-			object.position.x = 5
-			scene.add( object )
+	// 		object.position.x = 5
+	// 		scene.add( object )
 
-		} )
-		.catch( err => console.error( err ) )
+	// 	} )
+	// 	.catch( err => console.error( err ) )
 
-	loadObject( 'plantebakken-met-gras' )
+	loadObject( 'aquaphonics' )
 		.then( object => {
 			
 			console.log( object )

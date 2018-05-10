@@ -23,3 +23,62 @@ main {
 	margin-bottom: 9px;
 	margin-left: 20px;
 }
+
+.explanation-overlay {
+	pointer-events: none;
+}
+
+.explanation-overlay polyline {
+	fill: none;
+	stroke: white;
+	stroke-width: 3;
+}
+
+.explanation-overlay text {
+	fill: white;
+	font-size: 1rem;
+	font-family: var(--sysFont);
+}
+[data-overlay] {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	width: 100vw;
+	height: 100vh;
+
+	pointer-events: none;
+	& svg {
+		overflow: visible;
+	}
+	& p {
+		/* max-width: 5em; */
+		font-size: 1.5rem;
+		font-family: var(--sysFont);
+		color: white;
+		text-shadow: 2px 2px 0px #000;
+	}
+	& .explanation-overlay__left-top--hori {
+		position: absolute;
+		top: 30%;
+		left: 60%;
+	}
+	& .explanation-overlay__right-top--hori {
+		position: absolute;
+		top: 30%;
+		left: 15%;
+	}
+	& .explanation-overlay__left-top--vert {
+		position: absolute;
+		top: 60%;
+		left: 60%;
+	}
+	& .explanation-overlay__right-top--vert {
+		position: absolute;
+		top: 60%;
+		left: 25%;
+	}
+}
+
