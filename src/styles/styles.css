@@ -53,6 +53,11 @@ main {
 	& svg {
 		overflow: visible;
 	}
+	& div {
+		font-size: 4rem;
+		color: white;
+		position: absolute;
+	}
 	& p {
 		/* max-width: 5em; */
 		font-size: 1.5rem;
@@ -82,3 +87,30 @@ main {
 	}
 }
 
+.section-nav {
+	position: fixed;
+	bottom: 0;
+	width: 100vw;
+
+	display: flex;
+	justify-content: center;
+	align-content: center;
+
+	z-index: 999;
+
+	& button {
+		font-size: 1rem;
+		border: 0;
+		background: 0;
+		padding: 1rem 2rem;
+		background-color: white;
+		margin: .25rem;
+
+		cursor: pointer;
+
+		transition: transform 150ms ease-in-out;
+		&:hover {
+			transform: scale(1.05);
+		}
+	}
+}

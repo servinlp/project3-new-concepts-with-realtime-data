@@ -2,6 +2,7 @@
 import loadObject from './load-object.js'
 import render from './render.js'
 import { renderer, scene } from './base.js'
+import './overlay-state.js'
 
 function init() {
 

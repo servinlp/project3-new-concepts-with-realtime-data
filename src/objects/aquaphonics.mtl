@@ -6,7 +6,7 @@ Kd 1 1 1
 newmtl Mat
 Ka 1 1 1
 Kd 0.80000001192093 0.80000001192093 0.80000001192093
-map_Kd /Users/mees/Downloads/Tex/Grass.png
+map_Kd Grass.png
 Ks 1 1 1
 Ns 50
 illum 7
