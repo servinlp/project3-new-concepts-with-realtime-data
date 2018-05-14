@@ -72,3 +72,7 @@ The customers now have a better insight into what their participation means for 
 *   Tooling made by Mo, [available separately here](https://github.com/moniac/es8-postcss-boilerplate)
 *   Three.js
 *   GSAP for animations
+
+## License
+
+This project uses the MIT license, for more information, please check the LICENSE file in this repo.
