@@ -2,6 +2,7 @@
 :root {
 	--red: blue;
 	--sysFont: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	--darkBlue: #4d6ce3;
 }
 
 body {
@@ -9,6 +10,20 @@ body {
 	height: 4rem;
 	color: var(--red);
 	margin: 0;
+	background-color: black;
+
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently */
+
+}
+
+* {
+	-webkit-tap-highlight-color:  rgba(255, 255, 255, 0);
+	outline: 0;
 }
 
 canvas {
@@ -26,6 +41,7 @@ main {
 
 .explanation-overlay {
 	pointer-events: none;
+	transform: scale(.6);
 }
 
 .explanation-overlay path {
@@ -55,9 +71,12 @@ main {
 		overflow: visible;
 	}
 	& div {
-		font-size: 4rem;
+		font-size: 2rem;
 		color: white;
-		position: absolute;
+		margin: .5rem;
+		text-decoration: underline;
+		text-shadow: 2px 2px 0px #000;
+		/* position: absolute; */
 	}
 	& p {
 		/* max-width: 5em; */
@@ -65,26 +84,35 @@ main {
 		font-family: var(--sysFont);
 		color: white;
 		text-shadow: 2px 2px 0px #000;
+		margin: 0;
+	}
+	& > p {
+		font-size: .8rem;
+		max-width: 50%;
+		margin: .5rem;
+		border-bottom: 1px solid white;
+		padding: .3rem;
+		padding-left: 0;
 	}
 	& .explanation-overlay__left-top--hori {
 		position: absolute;
 		top: 30%;
-		left: 60%;
+		left: 50%;
 	}
 	& .explanation-overlay__right-top--hori {
 		position: absolute;
 		top: 30%;
-		left: 15%;
+		left: -20%;
 	}
 	& .explanation-overlay__left-top--vert {
 		position: absolute;
-		top: 60%;
-		left: 60%;
+		top: 55%;
+		left: 50%;
 	}
 	& .explanation-overlay__right-top--vert {
 		position: absolute;
-		top: 60%;
-		left: 25%;
+		top: 55%;
+		left: -3%;
 	}
 }
 
@@ -94,24 +122,150 @@ main {
 	width: 100vw;
 
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
 	align-content: center;
 
 	z-index: 999;
 
 	& button {
-		font-size: 1rem;
+		font-size: 4rem;
 		border: 0;
 		background: 0;
-		padding: 1rem 2rem;
-		background-color: white;
-		margin: .25rem;
-
+		/* padding: 1rem 2rem; */
+		background-color: transparent;
+		color: white;
+		margin: .25rem 0;
 		cursor: pointer;
-
 		transition: transform 150ms ease-in-out;
 		&:hover {
-			transform: scale(1.05);
+			transform: scale(1.2);
 		}
+	}
+}
+
+
+
+
+/* 
+	ANIMATION
+ */
+
+main {
+	opacity: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: black;
+	margin: 0;
+}
+
+
+.initialAnimation {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	height: 100vh;
+	
+	flex-flow: column wrap;
+}
+
+.intro-text {
+	font-family: 'Helvetica';
+	text-align: center;
+	color: white;
+	position: relative;
+	z-index: -1;
+	margin: 0 auto;
+	& h1, h2, p {
+		padding-bottom: 20vh;
+	}
+
+	& h1 {
+		font-size: 3rem;
+	}
+	& h2 {
+		font-size: 1.5rem;
+	}
+	& p {
+		// margin-top: 35vh;
+	}
+}
+
+.water-jar {
+  max-height: 100%;
+  height: 100%;
+  max-width: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+	& .water_wave_back {
+		right: 0;
+		fill: #C7EEFF;
+	}
+	& .water_wave_front {
+		left: 0;
+		fill: #4D6DE3;
+		margin-bottom: -1px;
+	}
+}
+.water_wave {
+	position: relative;
+	z-index: 9;
+}
+.water-container {
+	width: 100%;
+	height: 150%;
+}
+.water-filler {
+	position:relative;
+	top: -3px;
+	height: 100%;
+	width: 100%;
+	& .water-filler-front {
+		position: absolute;
+		z-index: 2;
+		width: 100%;
+		height: 100%;
+		background: var(--darkBlue);
+		
+	}	
+	& .water-filler-back {
+		position: absolute;
+		z-index: 1;
+		width: 100%;
+		height: 100%;
+		background-color: #C7EEFF;
+	}
+}
+
+.screen-transition {
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	left: 0;
+	& .block {
+		width: 2px;
+		height: 1px;
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	& .blue {
+		background-color: var(--darkBlue)
+	}
+	& .white{
+		background-color: white;
+	}
+	& .black {
+		background-color: black;
 	}
 }
