@@ -2,6 +2,7 @@
 import loadObject from './load-object.js'
 import render from './render.js'
 import { renderer, scene } from './base.js'
+import { panCameraAndObject } from './overlay-state.js'
 import './overlay-state.js'
 
 function init() {
@@ -32,7 +33,24 @@ function init() {
 			object.scale.x = 0.01
 			object.scale.y = 0.01
 			object.scale.z = 0.01
-			scene.add( object )
+
+			object.position.y -= 5
+			object.position.z = 5
+
+			const container = new THREE.Object3D()
+			container.rotation.y -= ( Math.PI / 180 ) * 45
+
+			container.name = 'object-container'
+			object.name = 'object'
+
+			container.add( object )
+			scene.add( container )
+
+			setTimeout( () => {
+
+				panCameraAndObject( 0 )
+
+			}, 400 )
 
 		} )
 		.catch( err => console.error( err ) )

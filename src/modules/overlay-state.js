@@ -1,4 +1,6 @@
 // import { TweenMax } from "gsap";
+import statePosition from './state-positions.js'
+import { scene, camera } from './base.js'
 
 let currentOverlay = 0;
 const transitionDur = .5;
@@ -27,6 +29,8 @@ function nextOverlay() {
 				TweenMax.to(getCurrentOverlay('[data-overlay]'), transitionDur, { autoAlpha: 1 })
 			}
 		})
+
+		panCameraAndObject( 0 )
 	}
 	else {
 		TweenMax.to(getCurrentOverlay('[data-overlay]'), transitionDur, { 
@@ -36,6 +40,8 @@ function nextOverlay() {
 				TweenMax.to(getCurrentOverlay('[data-overlay]'), transitionDur, { autoAlpha: 1 })
 			}
 		})
+
+		panCameraAndObject( currentOverlay + 1 )
 	}
 }
 
@@ -49,6 +55,7 @@ function prevOverlay() {
 			}
 		})
 		// If you go past the maximum number of overlays reset to highest number.
+		panCameraAndObject( getOverlayLengths('[data-overlay]') )
 	}
 	else {
 		TweenMax.to(getCurrentOverlay('[data-overlay]'), transitionDur, { 
@@ -58,7 +65,62 @@ function prevOverlay() {
 				TweenMax.to(getCurrentOverlay('[data-overlay]'), transitionDur, { autoAlpha: 1 })
 			}
 		})
+		panCameraAndObject( currentOverlay - 1 )
 	}
+}
+
+function panCameraAndObject( index ) {
+
+	const object = scene.getObjectByName( 'object' ),
+		targetPosition = statePosition[ index ],
+		camPos = {
+			x: targetPosition.camPosition[ 0 ],
+			y: targetPosition.camPosition[ 1 ],
+			z: targetPosition.camPosition[ 2 ]
+		},
+		camPosAfter = {
+			x: targetPosition.camPositionAfter[ 0 ],
+			y: targetPosition.camPositionAfter[ 1 ],
+			z: targetPosition.camPositionAfter[ 2 ]
+		},
+		camRot = {
+			x: targetPosition.camRotation[ 0 ],
+			y: targetPosition.camRotation[ 1 ],
+			z: targetPosition.camRotation[ 2 ],
+		},
+		objectPos = {
+			x: targetPosition.objectPosition[ 0 ],
+			y: targetPosition.objectPosition[ 1 ],
+			z: targetPosition.objectPosition[ 2 ]
+		}
+
+	TweenMax.to( object.position, 2, {
+		x: objectPos.x,
+		y: objectPos.y,
+		z: objectPos.z
+	} )
+
+	TweenMax.to( camera.position, 2, {
+		x: camPos.x,
+		y: camPos.y,
+		z: camPos.z
+	} )
+
+	TweenMax.to( camera.rotation, 2, {
+		x: camRot.x,
+		y: camRot.y,
+		z: camRot.z,
+		onComplete() {
+
+			TweenMax.to( camera.position, 20, {
+				x: camPosAfter.x,
+				y: camPosAfter.y,
+				z: camPosAfter.z
+			} )
+
+		}
+	} )
+
 }
 
 function initOverlayState(){
@@ -83,3 +145,5 @@ function initOverlayState(){
 TweenMax.to("path", 0.8, { strokeDashoffset: "-=12", repeat: -1, ease: Linear.easeNone });
 
 initOverlayState()
+
+export { panCameraAndObject }
