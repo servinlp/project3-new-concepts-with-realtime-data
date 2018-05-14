@@ -1,3 +1,5 @@
+import { panCameraAndObject } from './overlay-state.js'
+
 let waveHeight = document.querySelector('#back-wave').getBoundingClientRect().height * 2;
 
 window.onresize = function (event) {
@@ -40,6 +42,12 @@ function loaderAnimation() {
 				// Show final container 
 				console.log('main');
 				TweenMax.to('main', .6, {autoAlpha: 1});
+
+				setTimeout( () => {
+
+					panCameraAndObject( 0 )
+	
+				}, 400 )
 			}
 		});
 	}

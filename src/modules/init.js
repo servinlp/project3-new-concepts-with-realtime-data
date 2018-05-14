@@ -2,7 +2,6 @@
 import loadObject from './load-object.js'
 import render from './render.js'
 import { renderer, scene } from './base.js'
-import { panCameraAndObject } from './overlay-state.js'
 import './overlay-state.js'
 import './initialAnimation'
 
@@ -17,15 +16,6 @@ function init() {
 
 	scene.add( axesHelper )
 	scene.add( backplane )
-
-	// loadObject( 'catfishRawModel' )
-	// 	.then( object => {
-
-	// 		object.position.x = 5
-	// 		scene.add( object )
-
-	// 	} )
-	// 	.catch( err => console.error( err ) )
 
 	loadObject( 'aquaphonics' )
 		.then( object => {
@@ -46,12 +36,6 @@ function init() {
 
 			container.add( object )
 			scene.add( container )
-
-			setTimeout( () => {
-
-				panCameraAndObject( 0 )
-
-			}, 400 )
 
 		} )
 		.catch( err => console.error( err ) )
