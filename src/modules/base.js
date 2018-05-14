@@ -8,7 +8,7 @@ camera.position.z = 20
 
 renderer.setSize( window.innerWidth, window.innerHeight )
 renderer.setPixelRatio( window.devicePixelRatio )
-document.body.appendChild( renderer.domElement )
+document.querySelector('main').appendChild( renderer.domElement )
 
 window.addEventListener( 'resize', resize )
 
