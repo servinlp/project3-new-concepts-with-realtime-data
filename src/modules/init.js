@@ -3,6 +3,7 @@ import loadObject from './load-object.js'
 import render from './render.js'
 import { renderer, scene } from './base.js'
 import './overlay-state.js'
+import './initialAnimation'
 
 function init() {
 
@@ -38,7 +39,6 @@ function init() {
 		.catch( err => console.error( err ) )
 
 	renderer.animate( render )
-
 }
 
 export default init
