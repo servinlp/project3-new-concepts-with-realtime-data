@@ -80,4 +80,6 @@ function initOverlayState(){
 	bindEvents()
 }
 
+TweenMax.to("path", 0.8, { strokeDashoffset: "-=12", repeat: -1, ease: Linear.easeNone });
+
 initOverlayState()

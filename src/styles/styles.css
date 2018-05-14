@@ -28,10 +28,11 @@ main {
 	pointer-events: none;
 }
 
-.explanation-overlay polyline {
+.explanation-overlay path {
 	fill: none;
 	stroke: white;
 	stroke-width: 3;
+	stroke-dasharray: 8,4;
 }
 
 .explanation-overlay text {
