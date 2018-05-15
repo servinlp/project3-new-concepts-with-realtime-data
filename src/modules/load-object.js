@@ -4,7 +4,7 @@ function loadObject( name ) {
 
 		const mtlLoader = new THREE.MTLLoader()
 
-		mtlLoader.setPath( '/objects/' )
+		mtlLoader.setPath( './objects/' )
 
 		mtlLoader.load( `${ name }.mtl` , materials => {
 
@@ -12,7 +12,7 @@ function loadObject( name ) {
 
 			const objLoader = new THREE.OBJLoader()
 
-			objLoader.setPath( '/objects/' )
+			objLoader.setPath( './objects/' )
 			objLoader.setMaterials( materials )
 
 			objLoader.load( `${ name }.obj`, object => {

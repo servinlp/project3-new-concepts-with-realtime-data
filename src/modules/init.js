@@ -14,7 +14,7 @@ function init() {
 
 	backplane.position.z = 50
 
-	scene.add( axesHelper )
+	// scene.add( axesHelper )
 	scene.add( backplane )
 
 	loadObject( 'aquaphonics' )
