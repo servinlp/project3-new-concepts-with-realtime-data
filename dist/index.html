@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./styles/styles.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="initialAnimation">
+    <svg version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" x="0px" y="0px" style="display: none;">
+      <symbol id="wave">
+        <path d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z"></path>
+        <path d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z"></path>
+        <path d="M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z"></path>
+        <path d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z"></path>
+      </symbol>
+    </svg>
+
+    <div class="intro-text">
+      <h1>Aquaphonics</h1>
+      <h2>by de Ceuvel</h2>
+      <p>Made by Mo, Servin and Mees</p>
+      <h3>Hang on, your delicious meal is on it's way!</h3>
+    </div>
+
+    <div class="water-jar">
+      <div class="water-container">
+        <div id="water" class="water">
+          <svg viewBox="0 0 560 20" class="water_wave water_wave_back">
+            <use id="back-wave" xlink:href="#wave"></use>
+          </svg>
+          <svg viewBox="0 0 560 20" class="water_wave water_wave_front">
+            <use xlink:href="#wave"></use>
+          </svg>
+        </div>
+        <div class="water-filler">
+          <div class="water-filler-front"></div>
+          <div class="water-filler-back"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="screen-transition">
+      <div class="block blue"></div>
+      <div class="block white"></div>
+      <div class="block black"></div>
+    </div>
+  </div>
+
+  <main>
+    <div class="section-nav">
+      <button id="prev">
+        ⇦</button>
+      <button id="next">⇨</button>
+    </div>
+    <section data-overlay="1">
+      <div>African Catfish</div>
+      <p>At cafe de Ceuvel, we raise and harvest our own fish. The African Catfish have been raised over the period of 6 months.
+        During this time, the fish participate in a self sustaining model.</p>
+      <svg class="explanation-overlay explanation-overlay__left-top--hori" width="300" height="150" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,0 100,0 150,50" />
+        <!-- <text x="150" y="75">Water container</text> -->
+        <foreignObject x="20" y="75" width="200" height="200">
+          <p xmlns="http://www.w3.org/1999/xhtml">Water container</p>
+        </foreignObject>
+
+      </svg>
+
+      <svg class="explanation-overlay explanation-overlay__right-top--hori" width="300" height="150" xmlns="http://www.w3.org/2000/svg">
+        <path d="M250,0 150,0 100,50" />
+        <!-- <text x="0" y="75">African Catfish</text> -->
+        <foreignObject x="50" y="75" width="200" height="200">
+          <p xmlns="http://www.w3.org/1999/xhtml">African Catfish</p>
+        </foreignObject>
+
+      </svg>
+
+      <svg class="explanation-overlay explanation-overlay__left-top--vert" width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,0 0,100 50,150" />
+        <!-- <text x="60" y="165">Produces fish poop</text> -->
+        <foreignObject x="30" y="165" width="200" height="200">
+          <p xmlns="http://www.w3.org/1999/xhtml">Produces fish poop</p>
+        </foreignObject>
+
+      </svg>
+
+      <svg class="explanation-overlay explanation-overlay__right-top--vert" width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+        <path d="M150,0 150,100 100,150" />
+        <!-- <text x="0" y="175">Fish are harvested and eaten every 6 months</text> -->
+        <foreignObject x="-50" y="175" width="200" height="200">
+          <p xmlns="http://www.w3.org/1999/xhtml">Fish are harvested and eaten every 6 months</p>
+        </foreignObject>
+
+      </svg>
+    </section>
+
+    <section data-overlay="2">
+      <div>Poop container</div>
+      <p>The waste that the fish produce is rich in ammonia, which microbes then convert to nitrates, an effective plant fertilizer.
+        A completely natural process, the ammonia-nitrate conversion also keeps the tank's water clean and the marine animals
+        healthy.
+      </p>
+      <svg class="explanation-overlay explanation-overlay__left-top--hori" width="300" height="150" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,0 100,0 150,50" />
+        <!-- <text x="150" y="75">Water container</text> -->
+        <foreignObject x="20" y="75" width="200" height="200">
+          <p xmlns="http://www.w3.org/1999/xhtml">Contains fish poop</p>
+        </foreignObject>
+
+      </svg>
+
+      <svg class="explanation-overlay explanation-overlay__right-top--hori" width="300" height="150" xmlns="http://www.w3.org/2000/svg">
+        <path d="M250,0 150,0 100,50" />
+        <!-- <text x="0" y="75">African Catfish</text> -->
+        <foreignObject x="50" y="75" width="200" height="200">
+          <p xmlns="http://www.w3.org/1999/xhtml">Poop gets broken down to Nitrate</p>
+        </foreignObject>
+
+      </svg>
+
+      <svg class="explanation-overlay explanation-overlay__left-top--vert" width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,0 0,100 50,150" />
+        <!-- <text x="60" y="165">Produces fish poop</text> -->
+        <foreignObject x="30" y="165" width="200" height="200">
+          <p xmlns="http://www.w3.org/1999/xhtml">Contains Nitrifying Bacteria</p>
+        </foreignObject>
+
+      </svg>
+
+      <svg class="explanation-overlay explanation-overlay__right-top--vert" width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+        <path d="M150,0 150,100 100,150" />
+        <!-- <text x="0" y="175">Fish are harvested and eaten every 6 months</text> -->
+        <foreignObject x="-50" y="175" width="200" height="200">
+          <p xmlns="http://www.w3.org/1999/xhtml">Nitrate gets sent up to plants</p>
+        </foreignObject>
+
+      </svg>
+    </section>
+
+    <section data-overlay="3">
+      <div>Pipe & System</div>
+      <p>These pipes send the Nitrate and water supply to the vegetables via an automated system. It also keeps track of certain values of the water and fishes via sensors.</p>
+      <svg class="explanation-overlay explanation-overlay__left-top--hori" width="300" height="150" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,0 100,0 150,50" />
+        <!-- <text x="150" y="75">Water container</text> -->
+        <foreignObject x="20" y="75" width="200" height="200">
+          <p xmlns="http://www.w3.org/1999/xhtml">Water supply</p>
+        </foreignObject>
+
+      </svg>
+
+      <svg class="explanation-overlay explanation-overlay__right-top--hori" width="300" height="150" xmlns="http://www.w3.org/2000/svg">
+        <path d="M250,0 150,0 100,50" />
+        <!-- <text x="0" y="75">African Catfish</text> -->
+        <foreignObject x="50" y="75" width="200" height="200">
+          <p xmlns="http://www.w3.org/1999/xhtml">Nitrate supply</p>
+        </foreignObject>
+
+      </svg>
+
+      <svg class="explanation-overlay explanation-overlay__left-top--vert" width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,0 0,100 50,150" />
+        <!-- <text x="60" y="165">Produces fish poop</text> -->
+        <foreignObject x="30" y="165" width="200" height="200">
+          <p xmlns="http://www.w3.org/1999/xhtml">Uses sensors to track values</p>
+        </foreignObject>
+
+      </svg>
+
+      <svg class="explanation-overlay explanation-overlay__right-top--vert" width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+        <path d="M150,0 150,100 100,150" />
+        <!-- <text x="0" y="175">Fish are harvested and eaten every 6 months</text> -->
+        <foreignObject x="-50" y="175" width="200" height="200">
+          <p xmlns="http://www.w3.org/1999/xhtml">Regulates temperature overall system health</p>
+        </foreignObject>
+
+      </svg>
+
+    </section>
+
+    <section data-overlay="4">
+      <div>Plants</div>
+      <p>These plants are fed with Nitrate and water from the system. They are harvested for consumption in Cafe de Ceuvel.</p>
+      <svg class="explanation-overlay explanation-overlay__left-top--hori" width="300" height="150" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,0 100,0 150,50" />
+        <!-- <text x="150" y="75">Water container</text> -->
+        <foreignObject x="20" y="75" width="200" height="200">
+          <p xmlns="http://www.w3.org/1999/xhtml">Contains vegetation</p>
+        </foreignObject>
+
+      </svg>
+
+      <svg class="explanation-overlay explanation-overlay__right-top--hori" width="300" height="150" xmlns="http://www.w3.org/2000/svg">
+        <path d="M250,0 150,0 100,50" />
+        <!-- <text x="0" y="75">African Catfish</text> -->
+        <foreignObject x="50" y="75" width="200" height="200">
+          <p xmlns="http://www.w3.org/1999/xhtml">Fed by Nitrate and water</p>
+        </foreignObject>
+
+      </svg>
+
+      <svg class="explanation-overlay explanation-overlay__left-top--vert" width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,0 0,100 50,150" />
+        <!-- <text x="60" y="165">Produces fish poop</text> -->
+        <foreignObject x="30" y="165" width="200" height="200">
+          <p xmlns="http://www.w3.org/1999/xhtml">Filters the water</p>
+        </foreignObject>
+
+      </svg>
+
+      <svg class="explanation-overlay explanation-overlay__right-top--vert" width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+        <path d="M150,0 150,100 100,150" />
+        <!-- <text x="0" y="175">Fish are harvested and eaten every 6 months</text> -->
+        <foreignObject x="-50" y="175" width="200" height="200">
+          <p xmlns="http://www.w3.org/1999/xhtml">Harvested for consumption</p>
+        </foreignObject>
+
+      </svg>
+
+    </section>
+  </main>
+
+
+
+
+
+  <!-- <p>This is working!!</p> -->
+
+  <script src="./js/three.min.js"></script>
+  <script src="./js/MTLLoader.js"></script>
+  <script src="./js/OBJLoader.js"></script>
+  <script src="./js/OrbitControls.js"></script>
+  <script src="./bundle.js"></script>
+</body>
+
+</html>
