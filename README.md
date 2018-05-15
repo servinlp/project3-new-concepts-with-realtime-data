@@ -8,6 +8,7 @@
 
 *   [Getting Started](#getting-started)
 *   [Overview](#overview)
+*   [Design Challenge](#design-challenge)
 *   [User Scenario](#user-scenario)
 *   [Requirements](#requirements-for-success)
 *   [Challenges](#challenges)
@@ -28,6 +29,10 @@
 This is the third project of the Everything Web minor, a project done by [Mees](https://github.com/meesrutten), [Mo](https://github.com/moniac) & [Servin](https://github.com/servinlp).
 
 The challenge here is to implement data provided by Cafe de Ceuvel and make a product that can inform and entertain visitors about the self-sustaining fish tank.
+
+## Design Challenge
+
+Hoe kunnen wij, door middel van een interactieve applicatie, de gasten/bezoekers van de Ceuvel inzicht geven in hun duurzame productie van vis en groente.
 
 ## User Scenario
 
